@@ -18,52 +18,39 @@ int main() {
             cout << "2. Kita valiuta -> EUR " << endl;
             int change_option;
             cin>>change_option;
-                cout << "Pasirinkite valiutą: " << endl;
+            if(change_option == 1) {
+                cout << "Pasirinkite valiutą į kurią norite konvertuoti: " << endl;
                 cout << "1. GBP " << endl;
                 cout << "2. USD " << endl;
                 cout << "3. INR " << endl;
-                int currency;
-                cin>>currency;
+                int currency_type;
+                cin>>currency_type;
 
-                string currency_name;
-
-                cout<<"Įrašykite sumą: "<<endl;
+                cout<<"Įrašykite sumą (EUR): "<<endl;
                 double currency_value;
                 cin>>currency_value;
+
                 double result = 0;
-                if(change_option == 1 ) {
-                    if(currency == 1) {
-                        result = 0.8322*currency_value;
-                        currency_name = "GBP";
-                    }
-                    else if(currency == 2) {
-                        result = 1.11*currency_value;
-                        currency_name = "USD";
-                    }
-                    else {
-                        result = 93.1510*currency_value;
-                        currency_name = "INR";
-                    }
-                    cout << fixed << setprecision(2) << currency_value << " EUR -> "
-                    << fixed << setprecision(2) << result << " " << currency_name << endl;
-                }
-        else {
-            if(change_option == 1 ) {
-                if(currency == 1) {
-                    result = currency_value/0.8322;
+                string currency_name;
+
+                if(currency_type == 1) {
+                    result = 0.8322*currency_value;
                     currency_name = "GBP";
                 }
-                else if(currency == 2) {
-                    result = currency_value/1.11;
+                else if(currency_type == 2) {
+                    result = 1.11*currency_value;
                     currency_name = "USD";
                 }
                 else {
-                    result = currency_value/93.1510;
+                    result = 93.1510*currency_value;
                     currency_name = "INR";
                 }
-                cout << fixed << setprecision(2) << currency_value << " " << currency_name <<" -> "
-                << fixed << setprecision(2) << result << " EUR " << currency_name << endl;
-        }
+                cout << fixed << setprecision(2) << currency_value << " EUR -> "
+                << fixed << setprecision(2) << result << " " << currency_name << endl;
+            }
+            else {
+
+            }
             break;
         case 2:
             break;
